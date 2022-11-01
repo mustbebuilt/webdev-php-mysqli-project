@@ -1,0 +1,94 @@
+header, main, footer {
+    max-width:1200px;
+    margin:0 auto;
+}
+main {
+    margin-bottom:120px;
+}
+
+.burger {
+    display:none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding:20px 0;
+}
+header>.div:last-child {
+    position: static;
+}
+.mainNav {
+    position: static;
+	left:0;
+    top:0;
+	transition: none;
+}
+.mainNav>menu {
+    flex-direction: row;
+}
+
+.mainNav>menu li {
+    border-bottom: none;
+    border-right:1px solid var(--header-colour);
+}
+.mainNav>menu li:last-child {
+    border:none;
+}
+.mainNav>menu>li>a{
+    transition: color 0.5s;
+}
+.mainNav>menu>li>a:hover {
+    text-decoration: underline;
+    background-color: #fff;
+    color: #000;
+}
+.topBar{
+	padding-left:0;
+}
+ /* templates */
+.homePage{
+    flex-wrap: nowrap;
+}
+.homePage>div>a img{
+	transition: all 0.5s;
+}
+.homePage>div>a:hover img{
+	transform: scale(0.9);
+}
+.twoColumn{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.filmDetails{
+	display: flex;
+}
+.filmDetails>div{
+	padding:0 20px 0 0;
+}
+
+.sideBar{
+	padding:5px;
+    background-color: var(--header-bg-colour);
+    color: var(--header-colour);
+	font-size:0.9rem;
+	height: fit-content;
+}
+.sideBar h3{
+	text-align:center;
+}
+.sideBar div{
+	display: flex;
+    justify-content: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 400px;;
+}
+
+input[type="submit"] {
+    width: 400px;
+}
