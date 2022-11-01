@@ -1,9 +1,9 @@
 <?php
 /* Database credentials */
-define("DB_SERVER", "db451334740.db.1and1.com");
-define("DB_USERNAME", "dbo451334740");
-define("DB_PASSWORD", "sD(wEUz5");
-define("DB_NAME", "db451334740");
+define("DB_SERVER", "localhost");
+define("DB_USERNAME", "admin");
+define("DB_PASSWORD", "");
+define("DB_NAME", "");
  
 /* Attempt to connect to MySQL database */
 $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
