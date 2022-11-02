@@ -1,9 +1,3 @@
-<?php
-require_once("includes/config.php");
-// query to get all films
-$queryFilms = "SELECT * FROM Films";
-$resultFilms = $mysqli->query( $queryFilms );
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,38 +13,58 @@ $resultFilms = $mysqli->query( $queryFilms );
     />
   </head>
   <body>
-    <?php include("includes/header.php")?>
+<div class="headerContainer">
+	<header>
+        <div class="topBar">
+          <div>
+            <h1>SHU Films</h1>
+          </div>
+          <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+        <div>
+          <nav class="mainNav">
+            <menu>
+              <li><a href="index.php">Home</a></li>
+              <li><a href="catalogue.php">Catalogue</a></li>
+              <li><a href="search.php">Search</a></li>
+              <li><a href="contact.php">Contact Us</a></li>
+            </menu>
+          </nav>
+        </div>
+    </header>
+</div>
     <div class="mainContainer">
 		<main>
               <div class="banner">
                 <h2>Catalogue</h2>
               </div>
               <section class="twoColumn">
-                <div class="listing">
-                  <table>
-                    <tr>
-                      <th>Film</th>
-                      <th>Certificate</th>
-                      <th>Price</th>
-                    </tr>
-                      <?php
-                     while ($obj = $resultFilms -> fetch_object()) {
-                          echo "<tr>";
-                          echo "<td>{$obj->filmTitle}</td>";
-                          echo "<td>{$obj->filmCertificate}</td>";
-                          echo "<td>&pound; {$obj->filmPrice}</td>";
-                          echo "</tr>";
-                    }
-                    ?>
-                  </table>
-                </div>
-		<?php
-	    include("includes/sidebar.php");
-		?>
+                <!-- Film Listing Here -->
+<div class="sideBar">
+        <h3>Featured Film</h3>
+        <div> <img src="images/babadook.jpg" alt="Babadook"> </div>
+        <p>Info Here</p>
+      </div>
               </section>
         </main>
     </div>
-    <?php include("includes/footer.php")?>
+<div class="footerContainer">
+<footer>
+      <nav>
+        <menu>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+        </menu>
+      </nav>
+      <div>&copy; 2022</div>
+    </footer>
+</div>
     <script src="js/main.js"></script>
   </body>
 </html>

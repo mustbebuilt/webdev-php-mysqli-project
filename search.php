@@ -1,23 +1,3 @@
-<?php
-require_once( "includes/config.php" );
-//check for search value
-$searchQuery = $_GET[ 'q' ] ?? null;
-if ( is_null( $searchQuery ) || empty( $searchQuery ) ) {
-  $validSearch = false;
-} else {
-  $validSearch = true;
-  $searchQuery = "%" . $searchQuery . "%";
-  // query to get film by filmID
-  $stmt = $mysqli->prepare( "SELECT * FROM Films WHERE filmTitle LIKE ?" );
-  $stmt->bind_param( 's', $searchQuery );
-  $stmt->execute();
-  // get number of results
-  //$stmt->store_result();
-  //$numRows = $stmt->num_rows;
-  $result = $stmt->get_result();
-
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +13,30 @@ if ( is_null( $searchQuery ) || empty( $searchQuery ) ) {
     />
 </head>
 <body>
-<?php include("includes/header.php")?>
+<div class="headerContainer">
+	<header>
+        <div class="topBar">
+          <div>
+            <h1>SHU Films</h1>
+          </div>
+          <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+        <div>
+          <nav class="mainNav">
+            <menu>
+              <li><a href="index.php">Home</a></li>
+              <li><a href="catalogue.php">Catalogue</a></li>
+              <li><a href="search.php">Search</a></li>
+              <li><a href="contact.php">Contact Us</a></li>
+            </menu>
+          </nav>
+        </div>
+    </header>
+</div>
 <div class="mainContainer">
   <main>
     <div class="banner">
@@ -52,25 +55,29 @@ if ( is_null( $searchQuery ) || empty( $searchQuery ) ) {
             </div>
           </form>
         </div>
-        <?php
-        if ( $validSearch ) {
-          echo "<p>Your search found {$result->num_rows} result(s)";
-          while ( $obj = $result->fetch_object() ) {
-            echo "<h3>{$obj->filmTitle}</h3>";
-            echo "<p><a href=\"film-details.php?filmID={$obj->filmID}\">More Details</a></p>";
-          }
-        } else {
-          echo "<p>Search for a film.</p>";
-        }
-        ?>
+        <!-- Search Results Here -->
       </div>
-		<?php
-	    include("includes/sidebar.php");
-		?>
+<div class="sideBar">
+        <h3>Featured Film</h3>
+        <div> <img src="images/babadook.jpg" alt="Babadook"> </div>
+        <p>Info Here</p>
+      </div>
     </section>
   </main>
 </div>
-<?php include("includes/footer.php")?>
+<div class="footerContainer">
+<footer>
+      <nav>
+        <menu>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+        </menu>
+      </nav>
+      <div>&copy; 2022</div>
+    </footer>
+</div>
 <script src="js/main.js"></script>
 </body>
 </html>

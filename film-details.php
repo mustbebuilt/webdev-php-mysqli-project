@@ -1,22 +1,10 @@
-<?php
-require_once( "includes/config.php" );
-//check for querystring
-$getFilmID = $_GET[ 'filmID' ] ?? null;
-// query to get film by filmID
-$stmt = $mysqli->prepare( "SELECT * FROM Films WHERE filmID = ?" );
-$stmt->bind_param( 'i', $getFilmID );
-$stmt->execute();
-$result = $stmt->get_result();
-//
-$obj = $result->fetch_object();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title><?php echo $obj->filmTitle; ?></title>
+<title>Film Title Here</title>
 <link rel="stylesheet" href="css/mobile.css" />
 <link
       rel="stylesheet"
@@ -25,35 +13,60 @@ $obj = $result->fetch_object();
     />
 </head>
 <body>
-<?php include("includes/header.php")?>
+<div class="headerContainer">
+	<header>
+        <div class="topBar">
+          <div>
+            <h1>SHU Films</h1>
+          </div>
+          <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+        <div>
+          <nav class="mainNav">
+            <menu>
+              <li><a href="index.php">Home</a></li>
+              <li><a href="catalogue.php">Catalogue</a></li>
+              <li><a href="search.php">Search</a></li>
+              <li><a href="contact.php">Contact Us</a></li>
+            </menu>
+          </nav>
+        </div>
+    </header>
+</div>
 <div class="mainContainer">
   <main>
     <div class="banner">
-      <?php
-      echo "<h2>{$obj->filmTitle}</h2>";
-      ?>
+      <h2>Film Title Here</h2>
     </div>
     <section class="twoColumn">
       <div>
-        <?php
-        echo "<div class=\"filmDetails\">";
-        echo "<div>";
-        echo "<img src=\"images/{$obj->filmImage}\" alt=\"{$obj->filmTitle}\">";
-        echo "</div>";
-        echo "<div>";
-        echo "<p>{$obj->filmDescription}</p>";
-        echo "<p>{$obj->filmCertificate}</p>";
-        echo "</div>";
-        echo "</div>";
-        ?>
+<!-- Film Details here -->
       </div>
-		<?php
-	    include("includes/sidebar.php");
-		?>
+<div class="sideBar">
+        <h3>Featured Film</h3>
+        <div> <img src="images/babadook.jpg" alt="Babadook"> </div>
+        <p>Info Here</p>
+      </div>
     </section>
   </main>
 </div>
-<?php include("includes/footer.php")?>
+<div class="footerContainer">
+<footer>
+      <nav>
+        <menu>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+        </menu>
+      </nav>
+      <div>&copy; 2022</div>
+    </footer>
+</div>
 <script src="js/main.js"></script>
 </body>
 </html>
