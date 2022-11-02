@@ -38,7 +38,7 @@
     </header>
 </div>
     <div class="mainContainer">
-		<main>
+		      <main>
               <div class="banner">
                 <h2>Catalogue</h2>
               </div>
@@ -46,19 +46,11 @@
                 <div>
                 <!-- Film Listing Here -->
                 </div>
-<<<<<<< HEAD
-                <div class="sideBar">
-=======
-		<div class="sideBar">
->>>>>>> e42c51093d37513cf00bba4aa9194150c078dd50
+		            <div class="sideBar">
                 <h3>Featured Film</h3>
-                <div> <img src="images/babadook.jpg" alt="Babadook"> </div>
+                <div> <img src="images/babadook.jpg" alt="Babadook"/> </div>
                 <p>Info Here</p>
                 </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> e42c51093d37513cf00bba4aa9194150c078dd50
               </section>
         </main>
     </div>
