@@ -13,30 +13,9 @@
     />
   </head>
   <body>
-<div class="headerContainer">
-	<header>
-        <div class="topBar">
-          <div>
-            <h1>SHU Films</h1>
-          </div>
-          <div class="burger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-        </div>
-        <div>
-          <nav class="mainNav">
-            <menu>
-              <li><a href="index.php">Home</a></li>
-              <li><a href="catalogue.php">Catalogue</a></li>
-              <li><a href="search.php">Search</a></li>
-              <li><a href="contact.php">Contact Us</a></li>
-            </menu>
-          </nav>
-        </div>
-    </header>
-</div>
+<?php
+include("includes/header.php");
+?>
     <div class="mainContainer">
 		<main>
       <div class="banner">
@@ -47,19 +26,11 @@
       </section>
 		</main>
     </div>
- <div class="footerContainer">
-<footer>
-      <nav>
-        <menu>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Twitter</a></li>
-        </menu>
-      </nav>
-      <div>&copy; 2022</div>
-    </footer>
-</div>
+
+<?php
+// add Footer
+?>
+
     <script src="js/main.js"></script>
   </body>
 </html>
