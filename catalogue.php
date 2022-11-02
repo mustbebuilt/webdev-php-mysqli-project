@@ -43,7 +43,9 @@
                 <h2>Catalogue</h2>
               </div>
               <section class="twoColumn">
+                <div>
                 <!-- Film Listing Here -->
+                </div>
 <div class="sideBar">
         <h3>Featured Film</h3>
         <div> <img src="images/babadook.jpg" alt="Babadook"> </div>
