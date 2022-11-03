@@ -40,7 +40,6 @@ include("includes/header.php");
         echo "</div>";
         echo "<div>";
         echo "<p>{$obj->filmDescription}</p>";
-        echo "<p>{$obj->filmCertificate}</p>";
         echo "</div>";
         echo "</div>";
         ?>
